@@ -15,6 +15,7 @@ snake_surface = pygame.Surface((BLOCK,BLOCK))
 snake_surface.fill((53,59,72))
 
 while True: # to keep the window opens.
+  pygame.time.Clock().tick(10)
   window.fill((68,189,50))
 
   for event in pygame.event.get(): # here it´s to close the window and, importing the library for.
@@ -23,6 +24,11 @@ while True: # to keep the window opens.
          quit()
 
   for place in snake_pos:
-    window.blit(snake_surface,place) # blit to draw something on the screen. 
+    window.blit(snake_surface,place)  # blit to draw something on the screen. 
+  
+  # snake_pos[0] = snake_pos[0][0] + BLOCK, snake_pos[0][1] #right moviment
+  #snake_pos[0] = snake_pos[0][0] - BLOCK, snake_pos[0][1] # left moviment
+  #snake_pos[0] = snake_pos[0][0], snake_pos[0][1] - BLOCK # to up
+  #snake_pos[0] = snake_pos[0][0], snake_pos[0][1] + BLOCK # down
 
   pygame.display.update() # to update the screen 
